@@ -1,0 +1,22 @@
+~/nvim/
+│
+├── init.lua
+└── lua/
+    ├── settings.lua
+    ├── keymaps.lua
+    ├── autocmds.lua
+    ├── plugins/
+    │   ├── init.lua
+    │   └── modules\
+    │       ├── navigation.lua
+    │       │   ├── nvim-tree
+    │       │   └── telescope
+    │       ├── cmp.lua (nvim-cmp, cmp-nvim-lsp, cmp-buffer)
+    │       ├── highlighting.lua (treesitter)
+    │       ├── tools (nvim-dap, undotree, vim-visual-multi, vimwiki, lsp_signature)
+    │       └── visuals (colorscheme)
+    └── lsp/
+        ├── init.lua
+        ├── pylsp.lua
+        ├── clangd.lua
+        └── omnisharp.lua
