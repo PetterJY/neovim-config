@@ -9,26 +9,36 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- Tools
+    -- Undotree
     {
         "mbbill/undotree",
         config = function() require("plugins.modules.tools").undotree() end,
     },
 
+    -- VimWiki
     {
         "vimwiki/vimwiki",
         config = function() require("plugins.modules.tools").vimwiki() end,
     },
 
+    -- Vim-Visual-Multi (Multicursor)
     {
         "mg979/vim-visual-multi",
         branch = "master",
         config = function() require("plugins.modules.tools").visualmulti() end,
     },
 
+    -- DAP (Debug Adapter Protocol)
     {
         "mfussenegger/nvim-dap",
         dependencies = { "nvim-neotest/nvim-nio" },
         config = function() require("plugins.modules.tools").dap() end,
+    },
+
+    -- Fugitive (Git)
+    {
+        "tpope/vim-fugitive",
+        config = function() require("plugins.modules.tools").fugitive() end,
     },
 
     -- Treesitter
@@ -93,5 +103,4 @@ require("lazy").setup({
             require("plugins.modules.visuals")
         end,
     },
-
 })
