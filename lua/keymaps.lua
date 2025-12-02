@@ -36,6 +36,13 @@ end
 -- Splits
 vim.keymap.set("n", "<C-w>n", "<C-w>s", { desc = "Horizontal split" })
 vim.keymap.set("n", "<C-w>e", "<C-w>n", { desc = "Open new split in empty buffer" })
+vim.keymap.set("n", "<C-w>c", function()
+    if vim.fn.winnr("$") > 1 then
+        vim.cmd("wincmd c")
+    else 
+        vim.cmd("enew")
+    end
+end, { desc = "Close split, if only 1 split left open new an empty buffer" })
 
 -- Center view after selection
 vim.keymap.set('v', '<esc>', '<esc>zz')
