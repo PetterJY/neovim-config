@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Navigation
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    --vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     -- Telescope version (optional, better UI):
     vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 

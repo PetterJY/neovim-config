@@ -1,4 +1,4 @@
-vim.opt.updatetime = 200 
+vim.opt.updatetime = 50
 
 -- Leader key
 vim.g.mapleader = " "

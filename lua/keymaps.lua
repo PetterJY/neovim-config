@@ -25,6 +25,7 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { desc = "Close other tabs" })
 vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next tab" })
 vim.keymap.set("n", "<leader>th", ":tabprevious<CR>", { desc = "Previous tab" })
+vim.keymap.set("i", "<S-Tab>", "<C-d>", {desc = "Enable shift-tab in Insert-mode"})
 
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>t" .. i, function()
@@ -43,5 +44,5 @@ vim.keymap.set('v', '<esc>', '<esc>zz')
 vim.keymap.set("n", "<leader>lw", ":set wrap<CR>")
 vim.keymap.set("n", "<leader>le", ":set nowrap<CR>")
 
--- tmux-sessionizer
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- tmux-sessionizer (Convert to Linux first)
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

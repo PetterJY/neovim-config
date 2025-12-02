@@ -26,7 +26,7 @@ end
 function M.fugitive()
     vim.keymap.set("n", "<leader>gs", ":G<CR>")
     vim.keymap.set("n", "<leader>gb", ":G blame<CR>")
-    vim.keymap.set("n", "<leader>gd", ":G diffsplit<CR>")
+    vim.keymap.set("n", "<leader>gd", ":G diff<CR>")
 end
 
 return M
