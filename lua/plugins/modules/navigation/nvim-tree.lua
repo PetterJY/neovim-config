@@ -16,6 +16,10 @@ require("nvim-tree").setup({
     filters = {
         custom = { "\\.meta$" },
     },
+    git = {
+        enable = true,
+        ignore = false,
+    },
 })
 
 -- Keybinds 
