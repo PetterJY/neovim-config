@@ -4,7 +4,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = { 
       "bash", "c", "cpp", "lua", "python",
       "vim", "vimdoc", "query", 
-      "markdown", "markdown_inline" 
+      "markdown", "markdown_inline", "html"
   },
 
   sync_install = false,
