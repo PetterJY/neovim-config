@@ -1,5 +1,4 @@
 require("lsp.clangd")
-require("lsp.omnisharp")
 require("lsp.pylsp")
 
 -- nvim-lspconfig

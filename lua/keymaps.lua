@@ -51,5 +51,20 @@ vim.keymap.set('v', '<esc>', '<esc>zz')
 vim.keymap.set("n", "<leader>lw", ":set wrap<CR>")
 vim.keymap.set("n", "<leader>le", ":set nowrap<CR>")
 
--- tmux-sessionizer (Convert to Linux first)
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- Tmux
+vim.keymap.set("n", "<leader>tv", function()
+  if vim.env.TMUX then
+    vim.fn.system("tmux split-window -h")
+  else
+    vim.notify("Not inside tmux", vim.log.levels.WARN)
+  end
+end, { desc = "Tmux sessionizer vertical split" })
+
+vim.keymap.set("n", "<leader>th", function()
+  if vim.env.TMUX then
+    vim.fn.system("tmux split-window -v")
+  else
+    vim.notify("Not inside tmux", vim.log.levels.WARN)
+  end
+end, { desc = "Tmux sessionizer horizontal split" })
+
