@@ -51,6 +51,9 @@ vim.keymap.set('v', '<esc>', '<esc>zz')
 vim.keymap.set("n", "<leader>lw", ":set wrap<CR>")
 vim.keymap.set("n", "<leader>le", ":set nowrap<CR>")
 
+-- Leetcode
+vim.keymap.set("n", "<leader>lc", ":Leet<CR>")
+
 -- Tmux
 vim.keymap.set("n", "<C-t>h", function()
   if vim.env.TMUX then
