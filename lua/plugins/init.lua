@@ -8,6 +8,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Nvim-Web-Devicons
+    { 
+        "nvim-tree/nvim-web-devicons", 
+        lazy = true,
+        opts = {
+            default = true, -- enable default icons
+            -- strict = true, -- only known filetypes (optional)
+        },
+        priority = 1000,
+    },
+    
     -- Tools
     -- Undotree
     {
@@ -61,7 +72,7 @@ require("lazy").setup({
     { "nvim-tree/nvim-tree.lua",
       dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function() require("plugins.modules.navigation.nvim-tree") end, },
-    
+
     -- Autocomplete (CMP)
     {
         "hrsh7th/nvim-cmp",
