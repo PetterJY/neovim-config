@@ -1,7 +1,7 @@
 -- Insert-mode escape
 vim.keymap.set('i', 'jj', '<esc>')
 
--- Sane clipboard/register interplay
+-- Sane clipboard/register interplay (copy & paste) 
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
@@ -52,7 +52,7 @@ vim.keymap.set("n", "<leader>lw", ":set wrap<CR>")
 vim.keymap.set("n", "<leader>le", ":set nowrap<CR>")
 
 -- Tmux
-vim.keymap.set("n", "<leader>tv", function()
+vim.keymap.set("n", "<C-t>h", function()
   if vim.env.TMUX then
     vim.fn.system("tmux split-window -h")
   else
@@ -60,11 +60,10 @@ vim.keymap.set("n", "<leader>tv", function()
   end
 end, { desc = "Tmux sessionizer vertical split" })
 
-vim.keymap.set("n", "<leader>th", function()
+vim.keymap.set("n", "<C-t>v", function()
   if vim.env.TMUX then
     vim.fn.system("tmux split-window -v")
   else
     vim.notify("Not inside tmux", vim.log.levels.WARN)
   end
 end, { desc = "Tmux sessionizer horizontal split" })
-
