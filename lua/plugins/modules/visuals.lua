@@ -13,26 +13,19 @@ require("lspconfig").clangd.setup {
 local function link_cmp_to_theme()
   local set = vim.api.nvim_set_hl
 
-  -- Main text
-  set(0, "CmpItemAbbr", { link = "Pmenu" })
-  set(0, "CmpItemMenu", { link = "Pmenu" })
-  set(0, "CmpItemKind", { link = "Pmenu" })
+  -- Window/background (match floating windows from theme)
+  set(0, "CmpPmenu", { link = "NormalFloat" })
+  set(0, "CmpBorder", { link = "FloatBorder" })
+  set(0, "CmpPmenuSel", { link = "Visual" })
 
-  -- Matched text
-  set(0, "CmpItemAbbrMatch", { link = "PmenuSel" })
-  set(0, "CmpItemAbbrMatchFuzzy", { link = "PmenuSel" })
+  -- Text inside the menu
+  set(0, "CmpItemAbbr", { link = "NormalFloat" })
+  set(0, "CmpItemMenu", { link = "Comment" }) -- right-side source text
+  set(0, "CmpItemKind", { link = "Special" }) -- kind icon/text
 
-  -- Optional: remove kind coloring completely
-  for _, group in ipairs({
-    "CmpItemKindFunction",
-    "CmpItemKindMethod",
-    "CmpItemKindVariable",
-    "CmpItemKindKeyword",
-    "CmpItemKindField",
-    "CmpItemKindProperty",
-  }) do
-    set(0, group, { link = "Pmenu" })
-  end
+  -- Matched characters in the abbr
+  set(0, "CmpItemAbbrMatch", { link = "Search" })
+  set(0, "CmpItemAbbrMatchFuzzy", { link = "Search" })
 end
 
 -- Apply now
