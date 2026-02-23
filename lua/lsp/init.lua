@@ -1,5 +1,6 @@
 require("lsp.clangd")
 require("lsp.pylsp")
+require("lsp.lua")
 
 -- nvim-lspconfig
 vim.lsp.handlers["textDocument/hover"] =
