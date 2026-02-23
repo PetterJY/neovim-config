@@ -13,10 +13,9 @@
     │       │   └── telescope
     │       ├── cmp.lua (nvim-cmp, cmp-nvim-lsp, cmp-buffer)
     │       ├── highlighting.lua (treesitter)
-    │       ├── tools (nvim-dap, undotree, vim-visual-multi, vimwiki, lsp_signature)
+    │       ├── tools (undotree, vimwiki, fugitive)
     │       └── visuals (colorscheme)
     └── lsp/
         ├── init.lua
         ├── pylsp.lua
-        ├── clangd.lua
-        └── omnisharp.lua
+        └── clangd.lua

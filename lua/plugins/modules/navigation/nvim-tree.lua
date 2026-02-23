@@ -20,6 +20,13 @@ require("nvim-tree").setup({
         enable = true,
         ignore = false,
     },
+    root_dirs = {
+        vim.loop.fs_realpath(vim.loop.cwd())
+    },
+    filesystem_watchers = {
+        enable = false,
+        ignore_dirs = { "/.ccls-cache", "/build", "/node_modules", "/target" },
+    },
 })
 
 -- Keybinds 

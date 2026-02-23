@@ -81,8 +81,4 @@ require("lazy").setup({
     { "folke/tokyonight.nvim", },
     { "catppuccin/nvim", name = "catppuccin" },
     { "rose-pine/neovim", name = "rose-pine" },
-
-    config = function()
-        require("plugins.modules.visuals")
-    end,
 })
