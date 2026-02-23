@@ -4,7 +4,7 @@ vim.keymap.set('i', 'jj', '<esc>')
 -- Disable spacebar functionality in normal-mode (except leader)
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 
--- Sane clipboard/register interplay (copy & paste) 
+-- Sane clipboard/register interplay (copy & paste)
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
@@ -28,7 +28,7 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { desc = "Close other tabs" })
 vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { desc = "Next tab" })
 vim.keymap.set("n", "<leader>th", ":tabprevious<CR>", { desc = "Previous tab" })
-vim.keymap.set("i", "<S-Tab>", "<C-d>", {desc = "Enable shift-tab in Insert-mode"})
+vim.keymap.set("i", "<S-Tab>", "<C-d>", { desc = "Enable shift-tab in Insert-mode" })
 
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>t" .. i, function()
@@ -40,11 +40,11 @@ end
 vim.keymap.set("n", "<C-w>n", "<C-w>s", { desc = "Horizontal split" })
 vim.keymap.set("n", "<C-w>e", "<C-w>n", { desc = "Open new split in empty buffer" })
 vim.keymap.set("n", "<C-w>c", function()
-    if vim.fn.winnr("$") > 1 then
-        vim.cmd("wincmd c")
-    else 
-        vim.cmd("enew")
-    end
+  if vim.fn.winnr("$") > 1 then
+    vim.cmd("wincmd c")
+  else
+    vim.cmd("enew")
+  end
 end, { desc = "Close split, if only 1 split left open new an empty buffer" })
 
 -- Center view after selection
@@ -53,3 +53,9 @@ vim.keymap.set('v', '<esc>', '<esc>zz')
 -- Toggle linewrapping
 vim.keymap.set("n", "<leader>lw", ":set wrap<CR>")
 vim.keymap.set("n", "<leader>le", ":set nowrap<CR>")
+
+-- Keybinds for diagnostics (LSP dependant)
+vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
+vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Diagnostics to loclist" })
