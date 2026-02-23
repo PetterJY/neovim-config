@@ -1,6 +1,6 @@
 -- Autoformat
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.cs", "*.c", "*.cpp", "*.py" },
+  pattern = { "*.cs", "*.c", "*.cpp", "*.py", "*.lua"},
   callback = function(ev)
     local buf = ev.buf
     local clients = vim.lsp.get_active_clients({ bufnr = buf })

@@ -13,16 +13,6 @@ function M.vimwiki()
     }
 end
 
-function M.visualmulti()
--- visual-multi needs no config normally
-end
-
-function M.dap()
--- minimal DAP setup
-local dap = require("dap")
--- You can add adapter config here later
-end
-
 function M.fugitive()
     vim.keymap.set("n", "<leader>gs", ":G<CR>")
     vim.keymap.set("n", "<leader>gb", ":G blame<CR>")

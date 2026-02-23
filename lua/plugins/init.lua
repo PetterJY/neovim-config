@@ -21,20 +21,6 @@ require("lazy").setup({
         config = function() require("plugins.modules.tools").vimwiki() end,
     },
 
-    -- Vim-Visual-Multi (Multicursor)
-    {
-        "mg979/vim-visual-multi",
-        branch = "master",
-        config = function() require("plugins.modules.tools").visualmulti() end,
-    },
-
-    -- DAP (Debug Adapter Protocol)
-    {
-        "mfussenegger/nvim-dap",
-        dependencies = { "nvim-neotest/nvim-nio" },
-        config = function() require("plugins.modules.tools").dap() end,
-    },
-
     -- Fugitive (Git)
     {
         "tpope/vim-fugitive",
@@ -61,7 +47,7 @@ require("lazy").setup({
     { "nvim-tree/nvim-tree.lua",
       dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function() require("plugins.modules.navigation.nvim-tree") end, },
-    
+
     -- Autocomplete (CMP)
     {
         "hrsh7th/nvim-cmp",
@@ -91,16 +77,12 @@ require("lazy").setup({
     "ray-x/lsp_signature.nvim", 
 
     -- Colorschemes
-    "folke/tokyonight.nvim",
-    "rebelot/kanagawa.nvim",
+    { "rebelot/kanagawa.nvim", },
+    { "folke/tokyonight.nvim", },
     { "catppuccin/nvim", name = "catppuccin" },
     { "rose-pine/neovim", name = "rose-pine" },
-    {
-        "folke/tokyonight.nvim",
-        priority = 1000,
-        lazy = false,
-        config = function()
-            require("plugins.modules.visuals")
-        end,
-    },
+
+    config = function()
+        require("plugins.modules.visuals")
+    end,
 })
