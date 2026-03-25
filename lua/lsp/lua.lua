@@ -1,9 +1,8 @@
 local lspconfig = require("lspconfig")
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig.lua_ls.setup({
-  cmd = { "C:/Users/pettey/tools/lua-language-server-3.17.1-win32-x64/bin/lua-language-server" },
+  cmd = { "/home/petterjy/Documents/development/tools/lua-language-server-3.17.1-linux-x64/bin/lua-language-server" },
   capabilities = capabilities,
   settings = {
     Lua = {

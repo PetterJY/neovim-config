@@ -24,6 +24,8 @@ cmp.setup({
     }),
   },
 
+
+  -- Formatting
   formatting = {
     format = function(entry, vim_item)
       local max_width = 20

@@ -1,6 +1,6 @@
 -- Autoformat
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.cs", "*.c", "*.cpp", "*.py", "*.lua"},
+  pattern = { "*.cs", "*.c", "*.cpp", "*.py", "*.lua" },
   callback = function(ev)
     local buf = ev.buf
     local clients = vim.lsp.get_active_clients({ bufnr = buf })
@@ -16,20 +16,20 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Diagnostics window
 vim.diagnostic.config({
-    --virtual_text = false,
-    --virtual_lines = false,
-    float = {
-        --focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-    },
-    signs = true,
-    underline = true,
-    update_in_insert = false,
-    severity_sort = false,
+  --virtual_text = false,
+  --virtual_lines = false,
+  float = {
+    --focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
