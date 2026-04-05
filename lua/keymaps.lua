@@ -50,23 +50,3 @@ vim.keymap.set('v', '<esc>', '<esc>zz')
 -- Toggle linewrapping
 vim.keymap.set("n", "<leader>lw", ":set wrap<CR>")
 vim.keymap.set("n", "<leader>le", ":set nowrap<CR>")
-
--- Leetcode
-vim.keymap.set("n", "<leader>lc", ":Leet<CR>")
-
--- Tmux
-vim.keymap.set("n", "<C-t>h", function()
-  if vim.env.TMUX then
-    vim.fn.system("tmux split-window -h")
-  else
-    vim.notify("Not inside tmux", vim.log.levels.WARN)
-  end
-end, { desc = "Tmux sessionizer vertical split" })
-
-vim.keymap.set("n", "<C-t>v", function()
-  if vim.env.TMUX then
-    vim.fn.system("tmux split-window -v")
-  else
-    vim.notify("Not inside tmux", vim.log.levels.WARN)
-  end
-end, { desc = "Tmux sessionizer horizontal split" })

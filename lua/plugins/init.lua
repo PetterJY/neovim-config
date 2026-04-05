@@ -32,36 +32,10 @@ require("lazy").setup({
         config = function() require("plugins.modules.tools").vimwiki() end,
     },
 
-    -- Vim-Visual-Multi (Multicursor)
-    {
-        "mg979/vim-visual-multi",
-        branch = "master",
-        config = function() require("plugins.modules.tools").visualmulti() end,
-    },
-
-    -- DAP (Debug Adapter Protocol)
-    {
-        "mfussenegger/nvim-dap",
-        dependencies = { "nvim-neotest/nvim-nio" },
-        config = function() require("plugins.modules.tools").dap() end,
-    },
-
     -- Fugitive (Git)
     {
         "tpope/vim-fugitive",
         config = function() require("plugins.modules.tools").fugitive() end,
-    },
-
-    -- Leetcode 
-    {
-        "kawre/leetcode.nvim",
-        build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
-        dependencies = {
-            -- include a picker of your choice, see picker section for more details
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-        },
-        opts = function() return require("plugins.modules.tools").leetcode() end,
     },
 
     -- Treesitter

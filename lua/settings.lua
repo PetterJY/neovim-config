@@ -25,3 +25,6 @@ vim.opt.breakindentopt = { "shift:2" }
 -- Search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
