@@ -1,88 +1,72 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({ "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", lazypath
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
-  -- Tools
+vim.pack.add({
   -- Undotree
-  {
-    "mbbill/undotree",
-    config = function() require("plugins.modules.tools").undotree() end,
-  },
+  'https://github.com/mbbill/undotree',
 
-  -- VimWiki
-  {
-    "vimwiki/vimwiki",
-    config = function() require("plugins.modules.tools").vimwiki() end,
-  },
+  -- Vimwiki
+  'https://github.com/vimwiki/vimwiki',
 
-  -- Fugitive (Git)
-  {
-    "tpope/vim-fugitive",
-    config = function() require("plugins.modules.tools").fugitive() end,
-  },
+  -- Fugitive
+  'https://github.com/tpope/vim-fugitive',
 
   -- Treesitter
   {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "master",
-    lazy = false,
-    build = ":TSUpdate",
-    config = function()
-      require("plugins.modules.highlighting")
-    end,
+    src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+    version = 'master',
+    -- vim.cmd('TSUpdate')
   },
 
   -- Telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function() require("plugins.modules.navigation.telescope") end,
-  },
+  'https://github.com/nvim-telescope/telescope.nvim',
+  'https://github.com/nvim-lua/plenary.nvim',
 
-  -- Nvim-Tree
-  {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function() require("plugins.modules.navigation.nvim-tree") end,
-  },
+  -- Nvim-tree
+  'https://github.com/nvim-tree/nvim-tree.lua',
+  'https://github.com/nvim-tree/nvim-web-devicons',
 
   -- Autocomplete (CMP)
+  'https://github.com/hrsh7th/nvim-cmp',
+  'https://github.com/hrsh7th/cmp-buffer',
+  'https://github.com/hrsh7th/cmp-nvim-lsp',
+  'https://github.com/hrsh7th/cmp-path',
+  'https://github.com/saadparwaiz1/cmp_luasnip',
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-      {
-        "L3MON4D3/LuaSnip",
-        version = "v2.4.1",
-        build = "make install_jsregexp",
-      },
-    },
-    config = function()
-      require("plugins.modules.cmp")
-    end,
+    src = 'https://github.com/L3MON4D3/LuaSnip',
+    version = 'v2.4.1',
+    build = 'make install_jsregexp',
   },
 
   -- LSP
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("lsp")
-    end,
-  },
-  "ray-x/lsp_signature.nvim",
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/ray-x/lsp_signature.nvim',
 
   -- Colorschemes
-  { "rebelot/kanagawa.nvim", },
-  { "folke/tokyonight.nvim", },
-  { "catppuccin/nvim",       name = "catppuccin" },
-  { "rose-pine/neovim",      name = "rose-pine" },
+  'https://github.com/rebelot/kanagawa.nvim',
+  'https://github.com/folke/tokyonight.nvim',
+
+  {
+    src = 'https://github.com/catppuccin/nvim',
+    name = 'catppuccin'
+  },
+
+  {
+    src = 'https://github.com/rose-pine/neovim',
+    name = 'rose-pine'
+  },
 })
+
+-- Tools
+require('plugins.modules.tools').undotree()
+require('plugins.modules.tools').vimwiki()
+require('plugins.modules.tools').fugitive()
+
+-- Treesitter
+require('plugins.modules.highlighting')
+
+-- Telescope
+require('plugins.modules.navigation.telescope')
+
+-- Nvim-tree
+require('plugins.modules.navigation.nvim-tree')
+
+-- Autocomplete (CMP)
+require('plugins.modules.cmp')

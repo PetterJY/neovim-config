@@ -2,18 +2,18 @@ require("lsp.clangd")
 require("lsp.pylsp")
 require("lsp.lua")
 
--- nvim-lspconfig
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {
+-- Hover
+vim.keymap.set("n", "K", function()
+  vim.lsp.buf.hover({
     border = "rounded",
     winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
-  }
-)
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {
+  })
+end, { desc = "LSP Hover" })
+
+-- Signature help
+vim.keymap.set("n", "<C-k>", function()
+  vim.lsp.buf.signature_help({
     border = "rounded",
     winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
-  }
-)
+  })
+end, { desc = "LSP Signature Help" })
