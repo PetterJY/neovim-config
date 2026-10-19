@@ -1,5 +1,6 @@
-local lspconfig = require("lspconfig")
-lspconfig.pylsp.setup({
+vim.lsp.config("pylsp", {
   cmd = { "pylsp" },
   filetypes = { "python" },
 })
+
+vim.lsp.enable("pylsp")
