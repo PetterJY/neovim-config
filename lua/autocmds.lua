@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.cs", "*.c", "*.cpp", "*.py", "*.lua" },
   callback = function(ev)
     local buf = ev.buf
-    local clients = vim.lsp.get_active_clients({ bufnr = buf })
+    local clients = vim.lsp.get_clients({ bufnr = buf })
 
     for _, client in ipairs(clients) do
       if client:supports_method("textDocument/formatting") then
@@ -23,7 +23,7 @@ vim.diagnostic.config({
     --focusable = false,
     style = "minimal",
     border = "rounded",
-    source = "true",
+    source = true,
     header = "",
     prefix = "",
   },
