@@ -11,7 +11,7 @@ vim.pack.add({
   -- Treesitter
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
-    version = 'master',
+    version = 'main',
     -- vim.cmd('TSUpdate')
   },
 
