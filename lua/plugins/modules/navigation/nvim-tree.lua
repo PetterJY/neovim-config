@@ -21,7 +21,7 @@ require("nvim-tree").setup({
         ignore = false,
     },
     root_dirs = {
-        vim.loop.fs_realpath(vim.loop.cwd())
+        vim.uv.fs_realpath(vim.uv.cwd())
     },
     filesystem_watchers = {
         enable = false,
@@ -31,4 +31,4 @@ require("nvim-tree").setup({
 
 -- Keybinds 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>R", ":NvimTreeRefresh<CR>", { noremap = true, silent = true })
