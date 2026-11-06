@@ -32,7 +32,6 @@ vim.pack.add({
   {
     src = 'https://github.com/L3MON4D3/LuaSnip',
     version = 'v2.4.1',
-    build = 'make install_jsregexp',
   },
 
   -- LSP

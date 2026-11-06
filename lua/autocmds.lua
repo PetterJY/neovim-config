@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     local clients = vim.lsp.get_active_clients({ bufnr = buf })
 
     for _, client in ipairs(clients) do
-      if client.supports_method("textDocument/formatting") then
+      if client:supports_method("textDocument/formatting") then
         vim.lsp.buf.format({ bufnr = buf })
         return
       end
@@ -18,14 +18,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.diagnostic.config({
   --virtual_text = false,
   --virtual_lines = false,
+  
   float = {
     --focusable = false,
     style = "minimal",
     border = "rounded",
-    source = "always",
+    source = "true",
     header = "",
     prefix = "",
   },
+
+  jump = {
+    on_jump = function(diagnostic, bufnr)
+      if diagnostic then
+        vim.diagnostic.open_float({ bufnr = bufnr, scope = "cursor", focus = false })
+      end
+    end,
+  },
+
   signs = true,
   underline = true,
   update_in_insert = false,
@@ -38,8 +48,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     local opts = { buffer = bufnr }
 
-    -- TODO: Not sure of this one
-    -- Inlay Hints (only if supported by server + Neovim 0.10+)
     if client and client.server_capabilities.inlayHintProvider then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
     end
@@ -49,14 +57,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     --vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     -- Telescope version (optional, better UI):
-    vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+    vim.keymap.set("n", "grr", "<cmd>Telescope lsp_references<CR>", opts)
 
     -- Actions
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
     -- Hover / Info
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "rounded" }) end, opts)
+    vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help({ border = "rounded" }) end, opts)
 
     -- Formatting
     vim.keymap.set("n", "<leader>f", function()
