@@ -1,71 +1,55 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-
-require("luasnip.loaders.from_vscode").lazy_load()
-
-cmp.setup({
-  -- Enables luasnip for completion
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
+-- Autocompletion 
+require("blink.cmp").setup({
+  keymap = {
+    preset = "none",
+    ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+    ["<CR>"] = { "accept", "fallback" },
+    ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+    ["<C-n>"] = { "select_next", "fallback" },
+    ["<C-p>"] = { "select_prev", "fallback" },
+    ["<C-e>"] = { "hide", "fallback" },
   },
 
-  -- Styling
-  window = {
-    completion = cmp.config.window.bordered({
+  completion = {
+    menu = {
       border = "rounded",
-      winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:CmpPmenuSel,Search:None",
       max_height = 10,
-    }),
-    documentation = cmp.config.window.bordered({
-      border = "rounded",
-      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
-    }),
+      draw = {
+        components = {
+          label = { width = { max = 20 } }, -- truncate long names
+        },
+      },
+    },
+    documentation = {
+      auto_show = true,
+      window = { border = "rounded" },
+    },
   },
 
-
-  -- Formatting
-  formatting = {
-    format = function(entry, vim_item)
-      local max_width = 20
-      if #vim_item.abbr > max_width then
-        vim_item.abbr = string.sub(vim_item.abbr, 1, max_width) .. "…"
-      end
-      return vim_item
-    end
+  -- Function signature while typing arguments
+  signature = {
+    enabled = true,
+    window = { border = "rounded" },
   },
 
-  -- Keybinds
-  mapping = cmp.mapping.preset.insert({
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-  }),
-
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "path" },
-    { name = "buffer" },
-  }),
+  sources = {
+    default = { "lsp", "snippets", "path", "buffer" },
+  },
 })
+
+-- Match the menu colors to the colorscheme's floating windows
+local function link_to_theme()
+  local set = vim.api.nvim_set_hl
+  set(0, "BlinkCmpMenu", { link = "NormalFloat" })
+  set(0, "BlinkCmpMenuBorder", { link = "FloatBorder" })
+  set(0, "BlinkCmpMenuSelection", { link = "Visual" })
+  set(0, "BlinkCmpLabelMatch", { link = "Search" })
+  set(0, "BlinkCmpDoc", { link = "NormalFloat" })
+  set(0, "BlinkCmpDocBorder", { link = "FloatBorder" })
+  set(0, "BlinkCmpSignatureHelp", { link = "NormalFloat" })
+  set(0, "BlinkCmpSignatureHelpBorder", { link = "FloatBorder" })
+end
+
+link_to_theme()
+vim.api.nvim_create_autocmd("ColorScheme", { callback = link_to_theme })
