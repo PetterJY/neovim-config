@@ -25,7 +25,9 @@ Leader is `<Space>`.
 | `<C-w>e` | New split with an empty buffer |
 | `<C-w>c` | Close split (empty buffer if it's the last one) |
 
-**LSP** (when a language server is attached)
+## LSP
+
+Available when a language server is attached to the buffer.
 
 | Keys | Action |
 | --- | --- |
@@ -42,16 +44,19 @@ Leader is `<Space>`.
 | Keys | Action |
 | --- | --- |
 | `<leader>de` | Show diagnostic |
-| `<leader>dn` / `<leader>dp` | Next / previous diagnostic |
+| `<leader>dn` / `<leader>dp` | Next / previous diagnostic (opens the diagnostic) |
 | `<leader>dq` | Diagnostics to location list |
 
-**Completion** (insert mode)
+## Completion
+
+Insert mode, handled by blink.cmp. The signature of the function you're typing
+arguments for shows automatically.
 
 | Keys | Action |
 | --- | --- |
-| `<C-Space>` | Open completion |
+| `<C-Space>` | Open completion; when open, toggle the documentation window |
 | `<CR>` | Accept |
-| `<Tab>` / `<S-Tab>` | Next / previous item, or jump in a snippet |
+| `<Tab>` / `<S-Tab>` | Next / previous item, or jump between snippet fields |
 | `<C-n>` / `<C-p>` | Next / previous item |
 | `<C-e>` | Close |
 
@@ -70,8 +75,8 @@ Leader is `<Space>`.
 
 ## Tools
 
-| Keys                        | Action                     |
-| ---                         | ---                        |
-| `<leader>e` / `<leader>R`   | Toggle / refresh file tree |
-| `<leader>u`                 | Toggle undotree            |
-| `<leader>gs` / `<leader>gb` | Git status / blame         |
+| Keys | Action |
+| --- | --- |
+| `<leader>e` / `<leader>R` | Toggle / refresh file tree |
+| `<leader>u` | Toggle undotree |
+| `<leader>gs` / `<leader>gb` | Git status / blame |
