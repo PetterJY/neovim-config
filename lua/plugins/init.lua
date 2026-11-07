@@ -21,15 +21,11 @@ vim.pack.add({
   'https://github.com/nvim-tree/nvim-web-devicons',
 
   -- Autocomplete (CMP)
-  'https://github.com/hrsh7th/nvim-cmp',
-  'https://github.com/hrsh7th/cmp-buffer',
-  'https://github.com/hrsh7th/cmp-nvim-lsp',
-  'https://github.com/hrsh7th/cmp-path',
-  'https://github.com/saadparwaiz1/cmp_luasnip',
   {
-    src = 'https://github.com/L3MON4D3/LuaSnip',
-    version = 'v2.4.1',
+    src = 'https://github.com/saghen/blink.cmp',
+    version = 'v1.10.2',
   },
+  'https://github.com/rafamadriz/friendly-snippets',
 
   -- LSP
   'https://github.com/neovim/nvim-lspconfig',
