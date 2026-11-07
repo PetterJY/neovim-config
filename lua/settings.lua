@@ -25,3 +25,8 @@ vim.opt.breakindentopt = { "shift:2" }
 -- Search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- SSH
+if vim.env.SSH_TTY then vim.g.clipboard = "osc52" end

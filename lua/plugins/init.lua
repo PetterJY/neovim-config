@@ -33,7 +33,6 @@ vim.pack.add({
 
   -- LSP
   'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/ray-x/lsp_signature.nvim',
 
   -- Colorschemes
   'https://github.com/rebelot/kanagawa.nvim',
