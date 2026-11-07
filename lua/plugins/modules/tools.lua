@@ -1,13 +1,11 @@
 local M = {}
 
 function M.undotree()
-  -- Example keymap
-  vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
-  vim.g.undotree_DiffCommand = "diff"
+  vim.cmd.packadd("nvim.undotree")
+  vim.keymap.set("n", "<leader>u", "<cmd>Undotree<CR>", { desc = "Toggle undo tree" })
 end
 
 function M.vimwiki()
-  -- Optional settings
   vim.g.vimwiki_list = {
     { path = "~/vimwiki", syntax = "markdown", ext = ".md" },
   }
