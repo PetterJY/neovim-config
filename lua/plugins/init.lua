@@ -1,7 +1,4 @@
 vim.pack.add({
-  -- Undotree
-  'https://github.com/mbbill/undotree',
-
   -- Vimwiki
   'https://github.com/vimwiki/vimwiki',
 
