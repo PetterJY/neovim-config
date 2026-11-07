@@ -2,7 +2,7 @@
 
 Personal Neovim configuration.
 It requires **Neovim 0.12+** as it uses the `vim.pack` plugin-manager.
-The plugins and keymaps used in this config is described in [doc/PLUGINS.md](doc/PLUGINS.md) and [doc/KEYMAPS.md](doc/KEYMAPS.md).
+The plugins and keymaps used in this config are described in [doc/PLUGINS.md](doc/PLUGINS.md) and [doc/KEYMAPS.md](doc/KEYMAPS.md).
 
 ## Structure
 
