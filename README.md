@@ -10,6 +10,9 @@ The plugins and keymaps used in this config is described in [doc/PLUGINS.md](doc
 nvim/
 ├── init.lua
 ├── nvim-pack-lock.json
+├── doc/
+│   ├── PLUGINS.md
+│   └── KEYMAPS.md
 └── lua/
     ├── settings.lua
     ├── keymaps.lua
