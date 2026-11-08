@@ -1,13 +1,13 @@
--- Treesitter 
+-- Treesitter
 local parsers = {
   "bash", "c", "cpp", "lua", "python",
-  "vim", "vimdoc", "query",
+  "vim", "vimdoc", "query", "yaml",
   "markdown", "markdown_inline", "html",
 }
 
 -- Check if the parsers are installed. If not download them.
 if vim.fn.executable("tree-sitter") == 1 then
-  require("nvim-treesitter").install(parsers) 
+  require("nvim-treesitter").install(parsers)
 end
 
 -- Start highlighting if the parser is installed for the filetype.

@@ -31,6 +31,16 @@ vim.pack.add({
   'https://github.com/mason-org/mason.nvim',
   'https://github.com/mason-org/mason-lspconfig.nvim',
 
+  -- AI
+  {
+    src = 'https://github.com/olimorris/codecompanion.nvim',
+    version = 'v20.0.1',
+  },
+  {
+    src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+    version = 'v8.14.0',
+  },
+
   -- Colorschemes
   'https://github.com/rebelot/kanagawa.nvim',
   'https://github.com/folke/tokyonight.nvim',
@@ -65,3 +75,9 @@ require('plugins.modules.cmp')
 
 -- Mason
 require('plugins.modules.mason')
+
+-- AI
+require('plugins.modules.ai')
+
+-- Markdown rendering
+require('plugins.modules.markdown')
