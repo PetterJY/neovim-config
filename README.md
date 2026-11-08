@@ -45,4 +45,4 @@ nvim/
 ## Notes
 
 - Mason automatically installs the language servers clangd, pylsp, ruff, and lua_ls.
-- CodeCompanion uses Claude Code. The chat and inline prompts need [`claude-agent-acp`](https://github.com/zed-industries/claude-agent-acp) on your `PATH`, and the CLI view needs the `claude` CLI. Both use your Claude Code login.
+- CodeCompanion uses Claude Code. The chat and inline prompts need [`claude-agent-acp`](https://github.com/zed-industries/claude-agent-acp) on `PATH`, and the CLI view needs the `claude` CLI. 
