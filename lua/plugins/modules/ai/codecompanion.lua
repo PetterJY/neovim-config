@@ -1,13 +1,35 @@
+local settings = require("plugins.modules.ai.settings")
 local adapter = "claude_code"
 
+-- Same defaults for the CLI view, as command-line flags.
+local cli_args = {}
+if settings.mode then vim.list_extend(cli_args, { "--permission-mode", settings.mode }) end
+if settings.model then vim.list_extend(cli_args, { "--model", settings.model }) end
+if settings.effort then vim.list_extend(cli_args, { "--effort", settings.effort }) end
+
 require("codecompanion").setup({
+  adapters = {
+    acp = {
+      claude_code = function()
+        return require("codecompanion.adapters").extend("claude_code", {
+          defaults = {
+            session_config_options = {
+              mode = settings.mode,
+              model = settings.model,
+              thought_level = settings.effort,
+            },
+          },
+        })
+      end,
+    },
+  },
   interactions = {
     chat = { adapter = adapter },
     inline = { adapter = adapter },
     cli = {
       agent = "claude_code",
       agents = {
-        claude_code = { cmd = "claude", args = {}, description = "Claude Code CLI" },
+        claude_code = { cmd = "claude", args = cli_args, description = "Claude Code CLI" },
       },
     },
   },
