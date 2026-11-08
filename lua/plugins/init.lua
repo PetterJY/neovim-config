@@ -29,6 +29,8 @@ vim.pack.add({
 
   -- LSP
   'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/mason-org/mason.nvim',
+  'https://github.com/mason-org/mason-lspconfig.nvim',
 
   -- Colorschemes
   'https://github.com/rebelot/kanagawa.nvim',
@@ -61,3 +63,6 @@ require('plugins.modules.navigation.nvim-tree')
 
 -- Autocomplete (CMP)
 require('plugins.modules.cmp')
+
+-- Mason 
+require('plugins.modules.mason')
