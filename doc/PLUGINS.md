@@ -14,6 +14,5 @@ All plugins are installed with `vim.pack` from the list in
 | [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) | File tree | `navigation/nvim-tree.lua` |
 | [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) | File icons (needs a Nerd Font) | |
 | [vim-fugitive](https://github.com/tpope/vim-fugitive) | Git commands inside Neovim | `tools.lua` |
-| [undotree](https://github.com/mbbill/undotree) | Browse the undo history | `tools.lua` |
 | [vimwiki](https://github.com/vimwiki/vimwiki) | Personal wiki in `~/vimwiki` (Markdown) | `tools.lua` |
 | [kanagawa](https://github.com/rebelot/kanagawa.nvim), [tokyonight](https://github.com/folke/tokyonight.nvim), [catppuccin](https://github.com/catppuccin/nvim), [rose-pine](https://github.com/rose-pine/neovim) | Extra colorschemes (default is the built-in `retrobox`) | `visuals.lua` |
