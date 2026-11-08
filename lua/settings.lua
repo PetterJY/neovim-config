@@ -30,3 +30,16 @@ vim.opt.smartcase = true
 
 -- SSH
 if vim.env.SSH_TTY then vim.g.clipboard = "osc52" end
+
+-- File
+vim.filetype.add({
+  extension = {
+    pod = "systemd",
+    container = "systemd",
+    network = "systemd",
+    volume = "systemd",
+    kube = "systemd",
+    image = "systemd",
+    build = "systemd",
+  },
+})
