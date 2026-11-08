@@ -28,23 +28,21 @@ nvim/
         └── modules/
             ├── cmp.lua
             ├── highlighting.lua
+            ├── markdown.lua
             ├── mason.lua
             ├── tools.lua
             ├── visuals.lua
+            ├── ai/
+            │   ├── init.lua
+            │   └── codecompanion.lua
             └── navigation/
                 ├── telescope.lua
                 └── nvim-tree.lua
 ```
 
-`init.lua` is the entry point and loads everything else in order. The core
-files in `lua/` (`settings.lua`, `keymaps.lua`, `autocmds.lua`) hold editor
-options, general keymaps and autocommands, and don't depend on any plugin.
-`lua/lsp/` has one file per language server; each one configures its server and
-enables it, so it starts when you open a matching file. `lua/plugins/init.lua`
-lists every plugin for `vim.pack` to install, then loads each plugin's config
-from `lua/plugins/modules/`. `nvim-pack-lock.json` records the exact plugin
-versions so every machine installs the same ones.
+`init.lua` is the entry point and loads everything else in order. The core files in `lua/` (`settings.lua`, `keymaps.lua`, `autocmds.lua`) hold editor options, general keymaps and autocommands, and don't depend on any plugin. `lua/lsp/` has one file per language server; each one configures its server and enables it, so it starts when you open a matching file. `lua/plugins/init.lua` lists every plugin for `vim.pack` to install, then loads each plugin's config from `lua/plugins/modules/`. `nvim-pack-lock.json` records the exact plugin versions so every machine installs the same ones.
 
 ## Notes
 
-- Mason automatically installs the language servers clangd, pylsp, rutt, and lua_ls. 
+- Mason automatically installs the language servers clangd, pylsp, ruff, and lua_ls.
+- CodeCompanion uses Claude Code. The chat and inline prompts need [`claude-agent-acp`](https://github.com/zed-industries/claude-agent-acp) on your `PATH`, and the CLI view needs the `claude` CLI. Both use your Claude Code login.

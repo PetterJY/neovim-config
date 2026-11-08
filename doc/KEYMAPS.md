@@ -80,3 +80,14 @@ arguments for shows automatically.
 | `<leader>e` / `<leader>R` | Toggle / refresh file tree |
 | `<leader>u` | Toggle undotree |
 | `<leader>gs` / `<leader>gb` | Git status / blame |
+
+## AI
+| Keys | Action |
+| --- | --- |
+| `<leader>aa` | Toggle AI chat |
+| `<leader>an` | New AI chat |
+| `<leader>av` (visual) | Add selection to chat |
+| `<leader>ap` | Action palette (normal and visual) |
+| `<leader>ai` | Inline AI prompt (in visual mode, on the selection) |
+| `<leader>ac` | Open Claude Code CLI |
+| `<leader>ar` | Review changes made by the AI |
