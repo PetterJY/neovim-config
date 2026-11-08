@@ -6,6 +6,8 @@ All plugins are installed with `vim.pack` from the list in
 | Plugin | Purpose | Config |
 | --- | --- | --- |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Ready-made language server configs | `lua/lsp/` |
+| [mason.nvim](https://github.com/mason-org/mason.nvim) | Installs language servers | `mason.lua` |
+| [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim) | Tells Mason which servers to install | `mason.lua` |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (`main`) | Installs Treesitter parsers for highlighting | `highlighting.lua` |
 | [blink.cmp](https://github.com/saghen/blink.cmp) | Autocompletion (LSP, snippets, paths, buffer words) and signature help | `cmp.lua` |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | Snippet collection used by blink.cmp | |

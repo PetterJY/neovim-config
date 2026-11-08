@@ -9,7 +9,6 @@ vim.pack.add({
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
     version = 'main',
-    -- vim.cmd('TSUpdate')
   },
 
   -- Telescope
@@ -64,5 +63,5 @@ require('plugins.modules.navigation.nvim-tree')
 -- Autocomplete (CMP)
 require('plugins.modules.cmp')
 
--- Mason 
+-- Mason
 require('plugins.modules.mason')

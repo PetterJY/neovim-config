@@ -20,13 +20,15 @@ nvim/
     ├── lsp/
     │   ├── init.lua
     │   ├── clangd.lua
+    │   ├── lua.lua
     │   ├── pylsp.lua
-    │   └── lua.lua
+    │   └── ruff.lua
     └── plugins/
         ├── init.lua
         └── modules/
             ├── cmp.lua
             ├── highlighting.lua
+            ├── mason.lua
             ├── tools.lua
             ├── visuals.lua
             └── navigation/
@@ -45,8 +47,4 @@ versions so every machine installs the same ones.
 
 ## Notes
 
-- Language servers are **not** installed automatically. Install `clangd`,
-  `pylsp` and `lua-language-server` on each machine; `:checkhealth vim.lsp`
-  shows which ones Neovim finds.
-- Update plugins with `:lua vim.pack.update()`, then `:write` to apply.
-- Reload the config with `:restart`.
+- Mason automatically installs the language servers clangd, pylsp, rutt, and lua_ls. 
