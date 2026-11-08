@@ -1,6 +1,6 @@
 -- Autoformat
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = {"*.c", "*.cpp", "*.py", "*.lua" },
+  pattern = { "*.c", "*.cpp", "*.py", "*.lua", "*.container", "*.network" },
   callback = function(ev)
     local buf = ev.buf
     local clients = vim.lsp.get_clients({ bufnr = buf })
@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.diagnostic.config({
   --virtual_text = false,
   --virtual_lines = false,
-  
+
   float = {
     --focusable = false,
     style = "minimal",
