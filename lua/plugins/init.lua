@@ -30,6 +30,7 @@ vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/mason-org/mason.nvim',
   'https://github.com/mason-org/mason-lspconfig.nvim',
+  'https://github.com/seblyng/roslyn.nvim',
 
   -- AI
   {
@@ -61,6 +62,9 @@ require('plugins.modules.tools').undotree()
 require('plugins.modules.tools').vimwiki()
 require('plugins.modules.tools').fugitive()
 
+-- Mason (must load before Treesitter: it puts tree-sitter on PATH)
+require('plugins.modules.mason')
+
 -- Treesitter
 require('plugins.modules.highlighting')
 
@@ -72,9 +76,6 @@ require('plugins.modules.navigation.nvim-tree')
 
 -- Autocomplete (CMP)
 require('plugins.modules.cmp')
-
--- Mason
-require('plugins.modules.mason')
 
 -- AI
 require('plugins.modules.ai')

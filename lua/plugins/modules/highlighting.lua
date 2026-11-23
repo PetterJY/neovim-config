@@ -3,6 +3,7 @@ local parsers = {
   "bash", "c", "cpp", "lua", "python",
   "vim", "vimdoc", "query", "yaml",
   "markdown", "markdown_inline", "html",
+  "c_sharp",
 }
 
 -- Check if the parsers are installed. If not download them.

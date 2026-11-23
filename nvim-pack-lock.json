@@ -60,6 +60,10 @@
       "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
       "src": "https://github.com/rose-pine/neovim"
     },
+    "roslyn.nvim": {
+      "rev": "13103877cd3adcc395e80740fa5de104457eb22b",
+      "src": "https://github.com/seblyng/roslyn.nvim"
+    },
     "telescope.nvim": {
       "rev": "cfb85dcf7f822b79224e9e6aef9e8c794211b20b",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
