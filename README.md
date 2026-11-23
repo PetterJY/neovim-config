@@ -38,7 +38,8 @@ nvim/
             ├── visuals.lua
             ├── ai/
             │   ├── init.lua
-            │   └── codecompanion.lua
+            │   ├── codecompanion.lua
+            │   └── settings.lua
             └── navigation/
                 ├── telescope.lua
                 └── nvim-tree.lua
@@ -55,4 +56,4 @@ nvim/
   ```
   `~/.dotnet/tools` must be on `PATH`. If a folder has several solutions, choose one with `:Roslyn target`.
 - Treesitter parsers are only installed if `tree-sitter` is executable. Install `tree-sitter-cli` with `:MasonInstall tree-sitter-cli`.
-- CodeCompanion uses Claude Code. The chat and inline prompts need [`claude-agent-acp`](https://github.com/zed-industries/claude-agent-acp) on `PATH`, and the CLI view needs the `claude` CLI. 
+- The AI setup is off by default, but can be enabled by setting `NVIM_AI=1`. The chat and inline prompts need [`claude-agent-acp`](https://github.com/zed-industries/claude-agent-acp) on `PATH`, and the CLI view needs the `claude` CLI. 

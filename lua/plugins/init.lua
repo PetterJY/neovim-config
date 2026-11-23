@@ -32,11 +32,7 @@ vim.pack.add({
   'https://github.com/mason-org/mason-lspconfig.nvim',
   'https://github.com/seblyng/roslyn.nvim',
 
-  -- AI
-  {
-    src = 'https://github.com/olimorris/codecompanion.nvim',
-    version = 'v20.0.1',
-  },
+  -- Markdown rendering
   {
     src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim',
     version = 'v8.14.0',
@@ -62,7 +58,7 @@ require('plugins.modules.tools').undotree()
 require('plugins.modules.tools').vimwiki()
 require('plugins.modules.tools').fugitive()
 
--- Mason (must load before Treesitter: it puts tree-sitter on PATH)
+-- Mason
 require('plugins.modules.mason')
 
 -- Treesitter
@@ -78,7 +74,9 @@ require('plugins.modules.navigation.nvim-tree')
 require('plugins.modules.cmp')
 
 -- AI
-require('plugins.modules.ai')
+if vim.env.NVIM_AI == '1' then
+  require('plugins.modules.ai')
+end
 
 -- Markdown rendering
 require('plugins.modules.markdown')

@@ -18,6 +18,6 @@ All plugins are installed with `vim.pack` from the list in
 | [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) | File icons | |
 | [vim-fugitive](https://github.com/tpope/vim-fugitive) | Git commands inside Neovim | `tools.lua` |
 | [vimwiki](https://github.com/vimwiki/vimwiki) | Personal wiki in `~/vimwiki` | `tools.lua` |
-| [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim) (`v20.0.1`) | AI chat, inline edits, Claude Code CLI and review of AI changes, all using Claude Code | `ai/codecompanion.lua` |
+| [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim) (`v20.0.1`) | AI chat, inline edits, Claude Code CLI and review of AI changes, all using Claude Code. An optional feature that has to be enabled. | `ai/codecompanion.lua` |
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) (`v8.14.0`) | Renders Markdown in the buffer, used for Markdown files, the AI chat and vimwiki | `markdown.lua` |
 | [kanagawa](https://github.com/rebelot/kanagawa.nvim), [tokyonight](https://github.com/folke/tokyonight.nvim), [catppuccin](https://github.com/catppuccin/nvim), [rose-pine](https://github.com/rose-pine/neovim) | Extra colorschemes | `visuals.lua` |

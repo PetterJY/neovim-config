@@ -82,6 +82,8 @@ arguments for shows automatically.
 | `<leader>gs` / `<leader>gb` | Git status / blame |
 
 ## AI
+Only available when the AI feature is enabled.
+
 | Keys | Action |
 | --- | --- |
 | `<leader>aa` | Toggle AI chat |
